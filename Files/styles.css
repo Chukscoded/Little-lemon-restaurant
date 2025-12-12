@@ -1,3 +1,4 @@
+/*Global reset*/
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,10 @@ body {
   margin-bottom: 3rem;
   line-height: 1.6;
   color: #333;
+  overflow-x: hidden;
 }
+
+/*Typography*/
 
 h1, h2 {
   font-family: 'Playfair Display', sans-serif;
@@ -22,6 +26,84 @@ p {
   font-size: 1.1rem;
 }
 
+/*Header*/
+header > img {
+  display: block;
+  width: 15rem;
+  height: auto;
+  margin: 0 auto 0.5rem;
+}
+
+/*Navigation*/
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgb(13, 173, 173);
+}
+
+nav ul li a {
+  text-decoration: none;
+  position: relative;
+  padding: 0.625rem 0.9375rem;
+  color: black;
+  transition: color 0.3 ease;
+  font-weight: 600;
+}
+
+/*Hover underline*/
+nav ul li a::after {
+  position: absolute;
+  width: 0;
+  content: "";
+  bottom: -0.25rem;
+  left: 50%;
+  height: 0.125rem;
+  background: white;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/*Hamburger icon*/
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.375rem;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 1.75rem;
+  height: 0.1875rem;
+  background: black;
+  transition: 0.3s;
+}
+
+/* X animation */
+.menu-toggle.open div:nth-child(1) {
+  transform: translateY(0.5rem)rotate(45deg);
+}
+
+.menu-toggle.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open div:nth-child(3) {
+  transform: translateY(-0.5rem)rotate(-45deg);
+}
+
+nav ul.show {
+  display: flex;
+}
+
+/* Hero Section */
 .hero {
   background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrDqof46lEbYLYaixlacBC6GnxvWs9cPrCWQ&s') center/cover no-repeat;
   height: 70vh;
@@ -48,48 +130,7 @@ p {
   z-index: 2;
 }
 
-header > img {
-  display: block;
-  width: 15rem;
-  height: auto;
-  margin: 0 auto 0.5rem;
-}
-
-nav ul {
-  list-style: none;
-  text-align: center;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  background-color: rgb(13, 173, 173);
-}
-
-nav ul li a {
-  text-decoration: none;
-  position: relative;
-  padding: 0.625rem 0.9375rem;
-  color: black;
-  transition: color 0.3 ease;
-  font-weight: 600;
-}
-
-nav ul li a::after {
-  position: absolute;
-  width: 0;
-  content: "";
-  bottom: -0.25rem;
-  left: 50%;
-  height: 0.125rem;
-  background: white;
-  transition: 0.3s ease;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
+/*We Serve*/
 .serve {
   text-align: center;
   padding: 3rem 1rem;
@@ -97,9 +138,10 @@ nav ul li a:hover::after {
   font-size: 2rem;
 }
 
+/*Menu Cards*/
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
@@ -139,6 +181,15 @@ article img {
   display: block;
 }
 
+.extra-item {
+  display: none;
+}
+
+.extra-item.visible {
+  display: block;
+}
+
+/*View more button*/
 button {
   border: none;
   color: white;
@@ -161,6 +212,7 @@ button:hover {
   margin: 1rem;
 }
 
+/*Footer*/
 footer {
   display: flex;
   flex-wrap: wrap;
@@ -193,19 +245,50 @@ footer div {
   font-size: 1rem;
 }
 
+/*responsive breakpoints*/
 @media (max-width: 48rem) {
+  .menu-toggle {
+    display: flex;
+  }
+
   nav ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+    display: none;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
   }
 
   .hero {
     height: 50vh;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .card {
+    height: 11.25rem;
+  }
+
+  button {
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 64rem) {
   .menu-items {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 25rem) {
+  .menu-items {
+    grid-template-columns: 1fr;
   }
 }

@@ -7,6 +7,7 @@
     <title>Little Lemon </title>
     <!--CSS Files-->
     <link rel="stylesheet" href="styles.css">
+    <!--Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap">
 </head>
 <body>
@@ -14,6 +15,11 @@
         <img src="/Little Lemon Logos/Asset 14@4x.png" alt="Little-Lemon logo">
     </header>
     <nav>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
@@ -31,49 +37,41 @@
         </section>
 
         <section class="menu-items">
-            <section>
-                <article>
-                    <img class="card" src="/Little Lemon Logos/hummus.jpg" alt="hummus">
-                    <h2>Hummus and Warm Pita</h2>
-                    <p>Smooth, creamy chickpea dip blended with tahini, 
-                    olive oil, garlic, and lemon, served with freshly baked pita bread</p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <img class="card" src="/Little Lemon Logos/sharwarma plate.jpeg" alt="sharwarma">
-                    <h2>Sharwarma Plate</h2>
-                    <p>Tender, marinated meat slow-roasted on a spit,
-                    served with garlic sauce, salad, and seasoned rice</p>
-                </article>
-            </section>
-            <section class="menu-items">
-                <article>
-                    <img class="card" src="/Little Lemon Logos/falafel.jpeg" alt="falafel">
-                    <h2>Falafel Platter</h2>
-                    <p>Crispy golden chicken balls seasoned with herb and spices,
-                    served with tahini sauce, and fresh salad</p>
-                </article>
-            </section>
-            <section class="menu-items">
-                <article>
-                    <img class="card" src="/Little Lemon Logos/greek salad.jpeg" alt="greek salad">
-                    <h2>Greek Salad</h2>
-                    <p>Fresh cucumbers, tomatoes, olives, onions and feta,
-                    tossed in light lemon-olive oil dressing</p>
-                </article>
-            </section>
-            <section class="menu-items">
-                <article>
-                    <img class="card" src="/Little Lemon Logos/lamb kofta.jpeg" alt="lamb kofta">
-                    <h2>Lamb Kofta</h2>
-                    <p>Seasoned minced lamb grilled into tender skewers
-                    and paired with aromatic rice and home-made yogurt dip</p>
-                </article>
-            </section>
+        
+            <article>
+                <img class="card" src="/Little Lemon Logos/hummus.jpg" alt="hummus">
+                <h2>Hummus and Warm Pita</h2>
+                <p>Smooth, creamy chickpea dip blended with tahini, 
+                olive oil, garlic, and lemon, served with freshly baked pita bread</p>
+            </article>
+            <article>
+                <img class="card" src="/Little Lemon Logos/sharwarma plate.jpeg" alt="sharwarma">
+                <h2>Sharwarma Plate</h2>
+                <p>Tender, marinated meat slow-roasted on a spit,
+                served with garlic sauce, salad, and seasoned rice</p>
+            </article>
+            <article>
+                <img class="card" src="/Little Lemon Logos/falafel.jpeg" alt="falafel">
+                <h2>Falafel Platter</h2>
+                <p>Crispy golden chicken balls seasoned with herb and spices,
+                served with tahini sauce, and fresh salad</p>
+            </article>
+            <!--Hidden Items (View more)-->
+            <article class="extra-item">
+                <img class="card" src="/Little Lemon Logos/greek salad.jpeg" alt="greek salad">
+                <h2>Greek Salad</h2>
+                <p>Fresh cucumbers, tomatoes, olives, onions and feta,
+                tossed in light lemon-olive oil dressing</p>
+            </article>
+            <article class="extra-item">
+                <img class="card" src="/Little Lemon Logos/lamb kofta.jpeg" alt="lamb kofta">
+                <h2>Lamb Kofta</h2>
+                <p>Seasoned minced lamb grilled into tender skewers
+                and paired with aromatic rice and home-made yogurt dip</p>
+            </article>
         </section>
         <section class="button">
-            <button>View More</button>
+            <button id="viewMoreBtn">View More</button>
         </section>
     </main>
     <footer>
@@ -89,5 +87,7 @@
             <p class="Copyright">Copyright Little Lemon</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
